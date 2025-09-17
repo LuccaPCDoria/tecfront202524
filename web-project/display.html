@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Respostas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="form.html">Formulário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Respostas do Formulário</h1>
+        <div id="responses">
+            <p><strong>Nome:</strong> <span id="nameDisplay"></span></p>
+            <p><strong>Idade:</strong> <span id="ageDisplay"></span></p>
+            <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+            <p><strong>Portfólio (URL):</strong> <span id="urlDisplay"></span></p>
+            <p><strong>Nível de Experiência:</strong> <span id="experienceDisplay"></span></p>
+            <p><strong>Tecnologias de Interesse:</strong> <span id="techDisplay"></span></p>
+            <p><strong>Disponibilidade:</strong> <span id="datetimeDisplay"></span></p>
+            <p><strong>Confirmação de Dados:</strong> <span id="confirmationDisplay"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; @angelofdiasG</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            document.getElementById('nameDisplay').textContent = urlParams.get('name') || 'Não informado';
+            document.getElementById('ageDisplay').textContent = urlParams.get('age') || 'Não informado';
+            document.getElementById('emailDisplay').textContent = urlParams.get('email') || 'Não informado';
+            document.getElementById('urlDisplay').textContent = urlParams.get('url') || 'Não informado';
+            document.getElementById('experienceDisplay').textContent = urlParams.get('experience') || 'Não informado';
+            
+            const technologies = urlParams.getAll('technology');
+            document.getElementById('techDisplay').textContent = technologies.length > 0 ? technologies.join(', ') : 'Não informado';
+
+            const datetime = urlParams.get('datetime');
+            document.getElementById('datetimeDisplay').textContent = datetime ? new Date(datetime).toLocaleString('pt-BR') : 'Não informado';
+
+            const confirmation = urlParams.get('confirmation');
+            if (confirmation === 'on') {
+                document.getElementById('confirmationDisplay').textContent = 'Marcado como dados verídicos!';
+            } else {
+                document.getElementById('confirmationDisplay').textContent = 'Dados não confirmados como verídicos!';
+            }
+        });
+    </script>
+</body>
+</html>

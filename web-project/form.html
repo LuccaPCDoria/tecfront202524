@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Formulário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Formulário de Contato</h1>
+        <form action="display.html" method="GET">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="url">Portfólio (URL):</label>
+            <input type="url" id="url" name="url"><br><br>
+
+            <label>Nível de Experiência:</label><br>
+            <input type="radio" id="exp-beginner" name="experience" value="Iniciante">
+            <label for="exp-beginner">Iniciante</label><br>
+            <input type="radio" id="exp-intermediate" name="experience" value="Intermediário">
+            <label for="exp-intermediate">Intermediário</label><br>
+            <input type="radio" id="exp-advanced" name="experience" value="Avançado">
+            <label for="exp-advanced">Avançado</label><br><br>
+
+            <label>Tecnologias de Interesse:</label><br>
+            <input type="checkbox" id="tech-html" name="technology" value="HTML">
+            <label for="tech-html">HTML</label><br>
+            <input type="checkbox" id="tech-css" name="technology" value="CSS">
+            <label for="tech-css">CSS</label><br>
+            <input type="checkbox" id="tech-js" name="technology" value="JavaScript">
+            <label for="tech-js">JavaScript</label><br><br>
+
+            <label for="datetime">Disponibilidade:</label>
+            <input type="datetime-local" id="datetime" name="datetime"><br><br>
+
+            <input type="checkbox" id="confirmation" name="confirmation">
+            <label for="confirmation">Confirmo que os dados são verídicos</label><br><br>
+
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; @angelofdiasG</p>
+    </footer>
+</body>
+</html>
